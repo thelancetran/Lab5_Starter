@@ -56,3 +56,35 @@ test('STRONG PW very long', () => {
 test('STRONG PW short', () => {
   expect(isStrongPassword(`h`)).toBe(false);
 });
+
+test('DATE two digits', () => {
+  expect(isDate(`05/06/2024`)).toBe(true);
+});
+
+test('DATE one digit', () => {
+  expect(isDate(`5/6/2024`)).toBe(true);
+});
+
+test('DATE dashes', () => {
+  expect(isDate(`5-6-2024`)).toBe(false);
+});
+
+test('DATE words', () => {
+  expect(isDate(`May 6, 2024`)).toBe(false);
+});
+
+test('HEXCOLOR hash', () => {
+  expect(isHexColor(`#abcdef`)).toBe(true);
+});
+
+test('HEXCOLOR no hash', () => {
+  expect(isHexColor(`abcdef`)).toBe(true);
+});
+
+test('HEXCOLOR single digit', () => {
+  expect(isHexColor(`1`)).toBe(false);
+});
+
+test('HEXCOLOR long', () => {
+  expect(isHexColor(`ifeiunwiufnjaw`)).toBe(false);
+});
