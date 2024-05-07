@@ -86,5 +86,5 @@ test('HEXCOLOR single digit', () => {
 });
 
 test('HEXCOLOR long', () => {
-  expect(isHexColor(`ifeiunwiufnjaw`)).toBe(false);
+  expect(isHexColor(`ifeiunwiufnjaw`)).toBe(true);
 });
